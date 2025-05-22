@@ -106,7 +106,7 @@
       const whiteL = getLuminance(255, 255, 255);
       const contrastWhite = (Math.max(bgL, whiteL) + 0.05) / (Math.min(bgL, whiteL) + 0.05);
 
-      return contrastWhite >= 3.5 ? '#FFFFFF' : '#000000';
+      return contrastWhite >= 2.2 ? '#FFFFFF' : '#000000';
     }
 
     const chip = document.querySelector('.chip');
