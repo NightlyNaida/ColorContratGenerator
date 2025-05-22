@@ -59,6 +59,15 @@
       display: block;
       margin-top: 1rem;
     }
+
+    input[type="color"] {
+      width: 72px;
+      height: 72px;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      border-radius: 12px;
+    }
   </style>
 </head>
 <body>
@@ -90,15 +99,15 @@
     }
 
     function getContrast(bgHex) {
-  const r = parseInt(bgHex.substr(1, 2), 16);
-  const g = parseInt(bgHex.substr(3, 2), 16);
-  const b = parseInt(bgHex.substr(5, 2), 16);
-  const bgL = getLuminance(r, g, b);
-  const whiteL = getLuminance(255, 255, 255);
-  const contrastWhite = (Math.max(bgL, whiteL) + 0.05) / (Math.min(bgL, whiteL) + 0.05);
+      const r = parseInt(bgHex.substr(1, 2), 16);
+      const g = parseInt(bgHex.substr(3, 2), 16);
+      const b = parseInt(bgHex.substr(5, 2), 16);
+      const bgL = getLuminance(r, g, b);
+      const whiteL = getLuminance(255, 255, 255);
+      const contrastWhite = (Math.max(bgL, whiteL) + 0.05) / (Math.min(bgL, whiteL) + 0.05);
 
-  return contrastWhite >= 2 ? '#FFFFFF' : '#000000';
-}
+      return contrastWhite >= 3.5 ? '#FFFFFF' : '#000000';
+    }
 
     const chip = document.querySelector('.chip');
     const picker = document.getElementById('bgPicker');
